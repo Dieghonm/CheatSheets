@@ -1,4 +1,9 @@
-# modelo
+# Css no React
+
+
+`import './App.css';`
+
+
 *modelo*
 **modelo**
 - [ ] modelo

@@ -1,6 +1,9 @@
 # Componente de classe em React
 redux
-
+this
+props
+bind
+Constructor
 
 ```js
 import React, { Component } from 'react'
