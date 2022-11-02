@@ -1,115 +1,73 @@
 # Checklist do linter
 
 *Antes de começar*
-- [ ] pensar como será o *formato* do seu estado global
-- [ ] pensar quais actions serão necessárias na sua aplicação
+- [ ] inicie um projeto com npm init para criair um packege.json
+ou
+- [ ] inicie um projeto react com npx create-react-app my-app
 
 *Instalação*
-- [ ] npm i redux react-redux;
-- [ ] npm i redux-devtools-extension;
+- [ ] npm i eslint --save-dev
 
-*Criar dentro do diretório src:*
-- [ ] diretório `redux`
+*Para iniciar a configuração digite no terminal*
+- [ ] ./node_modules/.bin/eslint --init
 
-**Criar dentro do diretório `redux`**
-- [ ] diretório `store`
-- [ ] diretório `actions`
-- [ ] diretório `reducers`
+Para a primeira pergunta sobre como queremos usar o ESLint, escolha a opção To check syntax and find problems. 
+Isso possibilita a nosso arquivo de configuração encontrar problemas e corrigir a sintaxe de nossos arquivos JavaScript:
 
-*Criar dentro do diretório `actions`:*
-- [ ] arquivo `index.js`.
-
-*Criar dentro do diretório `reducers`:*
-- [ ] arquivo `index.js`.
-
-*Criar dentro do diretório `store`:*
-- [ ] arquivo `index.js`.
-
-*Criar dentro do diretório `reducers`:*
-- [ ] criar os reducers necessários
-- [ ] criar `rootReducer` usando o `combineReducers` no arquivo index.js
+? How would you like to use ESLint? … 
+  To check syntax only
+▸ To check syntax and find problems
+  To check syntax, find problems, and enforce code style
 
 
-exemplo:
+Em seguida, escolha Javascript modules (import/export) para definir o tipo de módulo adotado para o projeto:
 
-*Seu reducer pode seguir esse modelo.*
+  ? What type of modules does your project use? … 
+▸ JavaScript modules (import/export)
+  CommonJS (require/exports)
+  None of these
 
-```js
-const INITIAL_STATE = {};
 
-const nomeReducer1 = (state = INITIAL_STATE, action) => {
- switch(action.type) {
-   default:
-    return state;
- }
-}
+Para o tipo de framework que vamos utilizar, selecione None of these (você também pode escolher outro de sua preferência):
 
-export default nomeReducer1;
+  ? Which framework does your project use? … 
+▸ React
+  Vue.js
+  None of these
 
-```
 
-```js
-import { combineReducers } from 'redux';
-import nomeReducer1 from './nomeReducer1';
-import nomeReducer2 from './nomeReducer2';
+Sinalize que não vamos usar TypeScript:
 
-const rootReducer = combineReducers({
-  nomeReducer1,
-  nomeReducer2,
-});
+? Does your project use TypeScript? ‣ No / Yes
 
-export default rootReducer;
-```
 
-*No arquivo store/index.js:*
-- [ ] importar `rootReducer` e usá-lo na criação da `store`
-- [ ] configurar o [Redux DevTools](https://github.com/reduxjs/redux-devtools)
-- [ ] exportar a `store`
+Desmarque a opção Browser e selecione Node (use a barra de espaço do teclado para marcar/desmarcar),
+uma vez que queremos que o nosso projeto rode com o Node. Se estiver trabalhando em um projeto que utilize
+o Browser como referência, você pode já deixar essa opção selecionada.
 
-```js
-import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from '../reducers';
+? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+✔ Browser
+✔ Node
 
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(),
-);
 
-export default store;
-```
+Escolha o formato JSON, que será o formato do nosso arquivo de configuração:
 
-*No arquivo App.js:*
-- [ ] importar a `store`
-- [ ] definir o Provider, `<Provider store={ store }>`, para fornecer os estados a todos os componentes encapsulados em `<App />`.
+? What format do you want your config file to be in? … 
+  JavaScript
+  YAML
+▸ JSON
 
-*Na pasta actions:*
-- [ ] criar e exportar os actionTypes;`
-- [ ] criar e exportar os actions creators necessários
 
-*Exemplo de action types (arquivo actionTypes.js)*
+E para terminar aceite a instalação
 
-```js
-export const USER_LOGIN = 'USER_LOGIN';
-```
-*Exemplo action creator*
+✔ How would you like to use ESLint? · problems
+✔ What type of modules does your project use? · esm
+✔ Which framework does your project use? · react
+✔ Does your project use TypeScript? · No / Yes
+✔ Where does your code run? · node
+✔ What format do you want your config file to be in? · JSON
+The config that you've selected requires the following dependencies:
 
-```js
-import { USER_LOGIN } from '../actions/actionTypes';
-export const minhaAction = (value) => ({ type: USER_LOGIN, value });
-```
+eslint-plugin-react@latest
+✖ Would you like to install them now with npm? · No / Yes
 
-*Nos reducers:*
-- [ ] criar os casos para cada action criada, retornando o devido estado atualizado
-
-*Nos componentes que irão ler o estado:*
-- [ ] criar a função `mapStateToProps`
-- [ ] exportar usando o `connect`
-
-*Nos componentes que irão modificar o estado:*
-- [ ] criar a função `mapDispatchToProps`
-- [ ] exportar usando o `connect`
-
-```js
-export default connect(mapStateToProps, mapDispatchToProps)(Component)
-```
