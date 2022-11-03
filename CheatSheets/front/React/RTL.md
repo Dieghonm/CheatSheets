@@ -59,14 +59,23 @@ Existem 3 tipos de queries e suas vercoes para muitos elementos como podemos ver
 `https://testing-library.com/docs/react-testing-library/cheatsheet/`
 
 Type of Query   	0 Matches     	1 Match         	>1 Matches	    Retry (Async/Await)
+
 Single Element				
+
 getBy...        	Throw error     Return element  	Throw error	       No
+
 queryBy...	      Return null	    Return element	  Throw error	       No
+
 findBy...	        Throw error	    Return element	  Throw error	       Yes
+
 Multiple Elements				
+
 getAllBy...	      Throw error	    Return array	    Return array	     No
+
 queryAllBy...	    Return []	      Return array	    Return array	     No
+
 findAllBy...	    Throw error	    Return array	    Return array	     Yes
+
 
 ATENCAO - apenas o findBy e o findAllBy lidam com assincronicidades.
 
@@ -227,28 +236,51 @@ o Expect e os matchs são as partes masi importantes dos testes, são eles quem 
 ```
 
 `https://github.com/testing-library/jest-dom`
+
 toBeDisabled
+
 toBeEnabled
+
 toBeEmptyDOMElement
+
 toBeInTheDocument
+
 toBeInvalid
+
 toBeRequired
+
 toBeValid
+
 toBeVisible
+
 toContainElement
+
 toContainHTML
+
 toHaveAccessibleDescription
+
 toHaveAccessibleName
+
 toHaveAttribute
+
 toHaveClass
+
 toHaveFocus
+
 toHaveFormValues
+
 toHaveStyle
+
 toHaveTextContent
+
 toHaveValue
+
 toHaveDisplayValue
+
 toBeChecked
+
 toBePartiallyChecked
+
 toHaveErrorMessage
 
 
