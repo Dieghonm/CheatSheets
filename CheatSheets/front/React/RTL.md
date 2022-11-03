@@ -58,23 +58,23 @@ Existem 3 tipos de queries e suas vercoes para muitos elementos como podemos ver
 
 `https://testing-library.com/docs/react-testing-library/cheatsheet/`
 
-Type of Query   	0 Matches     	1 Match         	>1 Matches	    Retry (Async/Await)
+Type of Query   --	0 Matches    -- 	1 Match   --      	>1 Matches	 --   Retry (Async/Await)
 
 Single Element				
 
-getBy...        	Throw error     Return element  	Throw error	       No
+getBy...        --	Throw error  --   Return element  --	Throw error	   --    No
 
-queryBy...	      Return null	    Return element	  Throw error	       No
+queryBy...	     -- Return null	  --  Return element	--  Throw error	   --    No
 
-findBy...	        Throw error	    Return element	  Throw error	       Yes
+findBy...	      --  Throw error	  --  Return element	--  Throw error	    --   Yes
 
 Multiple Elements				
 
-getAllBy...	      Throw error	    Return array	    Return array	     No
+getAllBy...	    --  Throw error	  --  Return array	 --   Return array	  --   No
 
-queryAllBy...	    Return []	      Return array	    Return array	     No
+queryAllBy...	  --  Return []	   --   Return array	  --  Return array	  --   No
 
-findAllBy...	    Throw error	    Return array	    Return array	     Yes
+findAllBy...	  --  Throw error	 --   Return array	  --  Return array	  --   Yes
 
 
 ATENCAO - apenas o findBy e o findAllBy lidam com assincronicidades.
@@ -84,71 +84,140 @@ As queries devem ser complementadas com o que buscaremos na tela, para isso temo
 
 
 `ByLabelText` find by label or aria-label text content
+
+
 getByLabelText
+
 queryByLabelText
+
 getAllByLabelText
+
 queryAllByLabelText
+
 findByLabelText
+
 findAllByLabelText
 
+
+
 `ByPlaceholderText` find by input placeholder value
+
+
 getByPlaceholderText
+
 queryByPlaceholderText
+
 getAllByPlaceholderText
+
 queryAllByPlaceholderText
+
 findByPlaceholderText
+
 findAllByPlaceholderText
 
+
+
 `ByText` find by element text content
+
 getByText
+
 queryByText
+
 getAllByText
+
 queryAllByText
+
 findByText
+
 findAllByText
 
+
+
 `ByDisplayValue` find by form element current value
+
+
 getByDisplayValue
+
 queryByDisplayValue
+
 getAllByDisplayValue
+
 queryAllByDisplayValue
+
 findByDisplayValue
+
 findAllByDisplayValue
 
+
+
 `ByAltText` find by img alt attribute
+
 getByAltText
+
 queryByAltText
+
 getAllByAltText
+
 queryAllByAltText
+
 findByAltText
+
 findAllByAltText
 
+
+
 `ByTitle` find by title attribute or svg title tag
+
 getByTitle
+
 queryByTitle
+
 getAllByTitle
+
 queryAllByTitle
+
 findByTitle
+
 findAllByTitle
 
+
+
 `ByRole` find by aria role
+
 getByRole
+
 queryByRole
+
 getAllByRole
+
 queryAllByRole
+
 findByRole
+
 findAllByRole
 
+
+
 `ByTestId` find by data-testid attribute
+
 getByTestId
+
 queryByTestId
+
 getAllByTestId
+
 queryAllByTestId
+
 findByTestId
+
 findAllByTestId
 
+
+
 ```js
+
 const linkElement = screen.getByText(/learn react/i);
+
 ```
 
 
