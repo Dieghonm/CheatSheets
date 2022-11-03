@@ -26,7 +26,8 @@ Os componentes podem ser funcionais ou de classe e serão explicados em suas ses
 
 
 form
-input
+event.preventDefault();
+input, textarea, select, form.
 button
 img
 <select>
