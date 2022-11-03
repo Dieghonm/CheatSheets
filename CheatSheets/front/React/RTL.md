@@ -47,10 +47,10 @@ test('renders learn react link', () => {
 
 **Screen Queries e Seletores**
 
-*Screen*
+*Screen* - 
 O screen objet do RTL fornece métodos para consultar os elementos renderizados do DOM para fazer declarações sobre seu conteúdo de texto, atributos e muito mais. Ele que nos fornce as quiries e seletores.
 
-*Queries*
+*Queries* - 
 Queries sao metodos extraidos de entro do screen, e que vao efetivamente buscar algo no componente para verifivar o teste.
 No caso simulamos um componente renderizado com o `render()` e buscamos na tela o elemento a ser testado.
 
@@ -80,6 +80,7 @@ findAllBy...	  --  Throw error	 --   Return array	  --  Return array	  --   Yes
 ATENCAO - apenas o findBy e o findAllBy lidam com assincronicidades.
 
 As queries devem ser complementadas com o que buscaremos na tela, para isso temos
+
 (ByLabelText, ByPlaceholderText, ByText, ByDisplayValue, ByAltText, ByTitle, ByRole, ByTestId)
 
 
@@ -221,7 +222,7 @@ const linkElement = screen.getByText(/learn react/i);
 ```
 
 
-*Componentes assuncronos*
+*Componentes assuncronos* - 
 Levanso em conta que podemos ter componentes assincronos tanto por esperarem respostas de API ou por outros motivos, temos que lidar com este tempo de resposta, esperando a renderizacao de algum componente de tela, podemos fazer isso de 3 formas.
 
 utilizando o findBy e o findAllBy
@@ -230,7 +231,7 @@ utilizando o findBy e o findAllBy
 const button = await screen.findByText('Clicked once')
 ```
 
-utilizando o waitFor
+utilizando o waitFor - 
 o metodo waitFor vai esperar ate que o expect dentro dela retorne true ou de o seu timeOut
 
 ```js
@@ -242,7 +243,7 @@ await waitFor(() => {
 })
 ```
 
-utilizando o waitForElementToBeRemoved
+utilizando o waitForElementToBeRemoved - 
 waitForElementToBeRemoved (Promise) retry the function until it no longer returns a DOM node
 
 ```js
@@ -255,32 +256,45 @@ waitForElementToBeRemoved(() => getByText(/not here/i)).catch(err =>
 )
 ```
 
-**Events**
+**Events** - 
 
 Algumas vezes temos que simular intereacoes do usuario com a tela para testar funcionalidades, fazemod isso utilizando o firEvent ou o userEvent e seus parametros.
 
 fireEvent dispatches DOM events, whereas user-event simulates full interactions, which may fire multiple events and do additional checks along the way.
 
 
-*fireEvent*
+*fireEvent* - 
 https://testing-library.com/docs/guide-events/
+
 https://github.com/testing-library/dom-testing-library/blob/main/src/event-map.js
 
+
+
 fireEvent.mouseOver(element)
+
 fireEvent.mouseMove(element)
+
 fireEvent.mouseDown(element)
+
 element.focus() (if that element is focusable)
+
 fireEvent.mouseUp(element)
+
 fireEvent.click(element)
 
+
 diferenciados ver documentoacao
+
 fireEvent.keyDown(document.activeElement || document.body);
+
 fireEvent.focus(getByText('focus me'));
 
 
 
-*userEvent*
+
+*userEvent* - 
 o userEvent deve ser importado com
+
 import userEvent from '@testing-library/user-event';
 
 ```js
@@ -296,7 +310,7 @@ await user.click(element)
 ```
 
 
-*Expect e Match*
+*Expect e Match* - 
 o Expect e os matchs são as partes masi importantes dos testes, são eles quem efetivamente vai testar a aplicacão.
 
 ```js
