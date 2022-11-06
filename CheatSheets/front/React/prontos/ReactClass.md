@@ -135,6 +135,26 @@ this.setState((estadoAnterior, _props) => ({
 }
 ```
 
+*replaceState()*
+O replaceState() serve para alterar completamente o estado, removendo tudo o que havia anteriormente e setando um novo estado.
+
+```js
+// let's say that this.state is {foo: 42}
+
+this.setState({bar: 117})
+
+// this.state is now {foo: 42, bar: 117}
+
+this.setState({foo: 43})
+
+// this.state is now {foo: 43, bar: 117}
+
+this.replaceState({baz: "hello"})
+
+// this.state. is now {baz: "hello"}
+````
+
+
 **Props** - 
 Em react os componentes podem receber parâmetros e dados passados pelos componentes que os estão sumonando
 

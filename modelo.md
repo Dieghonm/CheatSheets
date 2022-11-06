@@ -4,8 +4,6 @@
 - [ ] modelo
 - [ ] `modelo`
 
-
-
 ```js
 const model = "";
 const func = () => {
