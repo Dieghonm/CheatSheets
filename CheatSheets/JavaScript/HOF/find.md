@@ -2,7 +2,6 @@
 
 utilizada para achar o primeiro elemento que satisfaça a condição passada
 
-
 ```js
 Arr.find((element) => { element === "" } )
 ```
