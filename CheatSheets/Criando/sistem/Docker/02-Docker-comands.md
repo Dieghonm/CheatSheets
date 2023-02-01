@@ -47,7 +47,9 @@ Ao tentar executar um container com uma imagem específica e esta imagem não es
 
 `sudo docker ps -a`Para visualizar todos os containers atuais, incluindo os que estão em execução e também parados
 
+`docker-compose down` - parar a execução de todos os serviços do Compose
 
+`docker-compose up <serviço>` - subir apenas parte dos serviços
 
 
 
@@ -77,18 +79,5 @@ docker container run --rm -d alpine:3.14 sleep 300
 
 `docker system prune -af` apaga todas as imagens do docker
 
+`docker-compose logs <nome-do-serviço>` - para ver os logs
 
-
-*modelo*
-**modelo**
-- [ ] modelo
-- [ ] `modelo`
-
-```js
-const model = "";
-const func = () => {
-    return model;
-}
-export default func;
-
-```

@@ -30,3 +30,6 @@ echo \
 E finalmente instalar o Docker
 ```sudo apt-get install docker-ce docker-ce-cli containerd.io```
 
+
+documentação do Docker
+https://docs.docker.com/storage/volumes/
