@@ -38,6 +38,13 @@ export const Title = styled('h1')({
 })
 ```
 
+para utilizar o elemento estilizado, precisamos importar e renomear o elemento.
+
+```js
+import * as S from '../style/Components/Header'
+
+  <S.Title>Diegho Moraes</S.Title>
+```
 
   display: inline-block;
   color: palevioletred;
