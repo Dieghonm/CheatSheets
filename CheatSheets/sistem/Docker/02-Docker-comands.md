@@ -1,83 +1,81 @@
 **Docker comands**
 
+```bash
 
-Inicie o Daemon do Docker
-O Daemon é um serviço que fica no background, ou seja, é um serviço que sempre está em execução e aguarda por comandos feitos por meio do CLI. Entretanto, para que este serviço fique sempre disponível, precisamos ativá-lo, até mesmo após reiniciarmos nosso computador.
+## Inicie o Daemon do Docker
 
-Para consultar o status atual do daemon do Docker, execute o seguinte comando:
-```
+O Daemon é um serviço que fica em segundo plano, sempre em execução e aguardando comandos feitos por meio do CLI. Para garantir que o serviço esteja disponível sempre, mesmo após reinicializações, siga estes passos:
+
+1. Consultar o status atual do daemon do Docker:
 sudo systemctl status docker
-```
-Caso o parâmetro Active esteja como stop/waiting ou no nosso caso, como inactive, rode o comando start para iniciá-lo:
-Copiar
+
+Caso o parâmetro Active esteja como stop/waiting ou, no nosso caso, como inactive, execute o comando start para iniciá-lo:
 sudo systemctl start docker
+
 Ao consultar o status novamente, o processo deverá estar como start/running/active.
 
 Agora, vamos habilitar o daemon do Docker para iniciar durante o boot:
-Copiar
 sudo systemctl enable docker
 
+## Valide a instalação
 
-Valide a instalação
-Para validar se tudo ocorreu como deveria na instalação, vamos executar o tão esperado hello world do Docker:
-
-Copiar
+Para verificar se a instalação foi concluída com sucesso, execute o tão esperado hello world do Docker:
 sudo docker run hello-world
 
-
-
-
 *Registry*
+
 Registry é um local onde podemos enviar e baixar imagens Docker.
-Docker Hub: a própria Docker Inc. oferece um serviço de registry público;
-https://hub.docker.com/
-Quay Container Registry: a empresa Red Hat também oferece um serviço semelhante. 
-https://quay.io/
 
+Docker Hub: a própria Docker Inc. oferece um serviço de registry público. Você pode acessá-lo em [https://hub.docker.com/](https://hub.docker.com/)
 
-Comandos básicos do Docker
+Quay Container Registry: a empresa Red Hat também oferece um serviço semelhante. Você pode acessá-lo em [https://quay.io/](https://quay.io/)
 
-`sudo docker images` para visualizar todas as imagens Docker que já estão presentes em sua máquina.
+## Comandos básicos do Docker
 
-Ao tentar executar um container com uma imagem específica e esta imagem não estiver presente em nossa máquina, o Docker por padrão tentará obter a imagem Docker através do seu Registry, o Docker Hub. Veja um exemplo de saída do comando em uma máquina sem nenhuma imagem:
+- Visualizar todas as imagens Docker presentes em sua máquina:
+sudo docker images
 
+Ao tentar executar um container com uma imagem específica e essa imagem não estiver presente em sua máquina, o Docker, por padrão, tentará obter a imagem através do Docker Hub. Veja um exemplo de saída do comando em uma máquina sem nenhuma imagem:
 
+- Listar todos os containers em execução neste momento em sua máquina:
+sudo docker ps
 
-`sudo docker ps` ou `sudo docker container ls` para listar todos os containers em execução neste momento em sua máquina.
+- Visualizar todos os containers atuais, incluindo os que estão em execução e os que estão parados:
+sudo docker ps -a
 
-`sudo docker ps -a`Para visualizar todos os containers atuais, incluindo os que estão em execução e também parados
+- Parar a execução de todos os serviços do Compose:
+docker-compose down
 
-`docker-compose down` - parar a execução de todos os serviços do Compose
+- Subir apenas parte dos serviços:
+docker-compose up <serviço>
 
-`docker-compose up <serviço>` - subir apenas parte dos serviços
+## Executando um novo container
 
+Utilize o comando docker container run <flags>? <imagem>:<tag> <argumentos>? para executar um container utilizando a imagem identificada por <imagem>:<tag>.
 
+Os parâmetros <flags>? e <argumentos>? são opcionais (o que é sinalizado pelo uso de ?).
 
-Executando um novo container
-➡️ Utilize o comando docker container run <flags>? <imagem>:<tag> <argumentos>? para executar um container utilizando a imagem identificada pelo <imagem>:<tag>.
+- Remover os containers:
+sudo docker rm <nome-do-container>
 
-⚠️ Os parâmetros <flags>? e <argumentos>? são opcionais (o que é sinalizado pelo uso de ?)
+Um container só pode ser removido com o comando docker rm <nome-do-container> se ele estiver parado ou tiver sua execução terminada.
 
+- Remover todos os containers inativos do seu computador:
+sudo docker container prune
 
-`sudo docker rm <nome-do-container>` remover os containers
-m container só pode ser removido com o comando docker rm <nome-do-container> se ele estiver parado ou tiver sua execução terminada**.
+## Modo "segundo plano"
 
-`sudo docker container prune` remove todos os containers inativos do seu computador.
-
-
-
-
-Modo “segundo plano”
-A flag -d ou --detach faz com que a execução do container ocorra em segundo plano, ou seja, embora não esteja visível, o container executará de forma assíncrona. Esta opção é interessante quando o programa a ser executado é um servidor ou algum processo que você sabe previamente que terá uma execução demorada.
+A flag -d ou --detach faz com que a execução do container ocorra em segundo plano, ou seja, embora não esteja visível, o container executará de forma assíncrona. Essa opção é interessante quando o programa a ser executado é um servidor ou algum processo que você sabe previamente que terá uma execução demorada.
 
 Veja abaixo a saída ao executar um container no modo detached. Neste exemplo, trocamos o argumento echo pela execução do programa sleep, que fará com que o container continue sua execução por 300 segundos (5 minutos):
 
 docker container run --rm -d alpine:3.14 sleep 300
 
+- Para forçar a parada de execução do container:
+sudo docker stop <nome-do-container>
 
-`sudo docker stop <nome-do-container>`  Para forçar a parada de execução do container 
+- Apagar todas as imagens do Docker:
+docker system prune -af
 
-`docker system prune -af` apaga todas as imagens do docker
-
-`docker-compose logs <nome-do-serviço>` - para ver os logs
-
+- Para ver os logs:
+docker-compose logs <nome-do-serviço>

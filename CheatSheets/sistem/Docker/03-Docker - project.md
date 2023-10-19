@@ -64,15 +64,40 @@ o conteudo e nem rodar.
 80 porta onde a aplicação esta aberta no docke
 3000:80 liga uma porta a outra.
 
-**modelo**
-- [ ] modelo
-- [ ] `modelo`
 
-```js
-const model = "";
-const func = () => {
-    return model;
-}
-export default func;
 
-```
+
+# Utilizando o Docker em um projeto
+
+# Use a Node 16 base image
+FROM node:16-alpine 
+
+# Define o diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copia os arquivos do projeto para o container
+COPY . .
+
+# Instala as dependências (npm ci garante que as versões exatas do arquivo lock sejam instaladas)
+RUN npm ci 
+
+# Realiza o build do projeto
+RUN npm run build
+
+# Define a variável de ambiente NODE_ENV como "production"
+ENV NODE_ENV production
+
+# Expõe a porta em que a aplicação estará em execução (3000 é a porta padrão do "serve")
+EXPOSE 3000
+
+# Inicia a aplicação
+CMD [ "npx", "serve", "build" ]
+
+# Comandos importantes no Dockerfile:
+# - `FROM nginx`: define a imagem base a ser utilizada. Neste exemplo, estamos utilizando o Nginx, um servidor HTTP.
+# - `WORKDIR /site`: define o diretório de trabalho dentro da imagem.
+# - `COPY index.html /usr/share/nginx/html`: copia um arquivo específico para dentro do container.
+# - `EXPOSE 80`: indica que a imagem estará disponível na porta 80.
+# - `RUN apk add hugo`: executa um comando durante a construção da imagem.
+# - `ENTRYPOINT ["nginx", "-g", "daemon off;"]`: define o comando a ser executado ao iniciar o container.
+# - `COPY --from=primeiro-estagio /site/public/ /usr/share/nginx/html`: copia arquivos de um estágio anterior para o estágio atual, criando uma aplicação sem os passos e instalações anteriores.
