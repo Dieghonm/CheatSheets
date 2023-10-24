@@ -55,7 +55,7 @@ Existem alguns métodos interessantes para tratar strings em Python. Entre eles,
 
 *Upper*
 Transforma todas as letras em maiúsculas.
-```py
+```python
  curso = 'Ensino a Distância'
  curso.upper()
 'ENSINO A DISTÂNCIA'
@@ -63,14 +63,14 @@ Transforma todas as letras em maiúsculas.
 
 *Lower*
 Transforma todas as letras em minúsculas.
-```py
+```python
  curso.lower()
 'ensino a distância'
 ```
 
 *Split*
 Quebra a string em substrings.
-```py
+```python
  curso.split()
 ['Ensino', 'a', 'Distância']
 ```
