@@ -1,6 +1,7 @@
 # React 101
 
 *Instalação*
+Abra um terminal no Ubuntu (você pode pressionar Ctrl + Alt + T para abrir o Terminal).
 
 `npx create-react-app nome-do-app`
 
