@@ -60,3 +60,5 @@ O DBeaver é uma ferramenta de banco de dados universal com suporte ao PostgreSQ
     - Preencha os detalhes da conexão, incluindo host (geralmente localhost), porta, nome do banco de dados, nome do usuário (postgres) e a senha definida durante a instalação do PostgreSQL.
 
 Escolher a interface adequada depende das preferências pessoais e das necessidades específicas de administração e desenvolvimento.
+
+
