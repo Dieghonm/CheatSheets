@@ -78,17 +78,3 @@ O argumento passado para o método `join()` determina o separador que será inse
 
 Assim, o método `join()` é uma ferramenta eficaz para criar strings concatenadas a partir de elementos contidos em uma lista ou outra sequência.
 
-
-*modelo*
-**modelo**
-- [ ] modelo
-- [ ] `modelo`
-
-```js
-const model = "";
-const func = () => {
-    return model;
-}
-export default func;
-
-```

@@ -1,6 +1,39 @@
 # Manipulação de Arquivos
 Utilizando o python podemso abrir e manipular diferentes tipos de arquivos, proporcionando inúmeras possibilidades. Desde a criação de planilhas repletas de dados (ex:Excel) até a organização de informações quantitativas em tabelas, passando pela edição dinâmica de textos, o Python se destaca como uma ferramenta multifacetada para lidar com uma variedade de tarefas.
 
+**Criando e Removendo Diretórios/pastas em Python**
+
+Ao lidar com manipulação de arquivos e diretórios em Python, é comum a necessidade de criar e remover diretórios no sistema de arquivos. Para isso, a biblioteca padrão `os` fornece algumas funções úteis, como `os.mkdir()` e `os.rmdir()`.
+
+**1. `os.mkdir(caminho)`**
+
+O método `os.mkdir(caminho)` é usado para criar um novo diretório no sistema de arquivos com o caminho especificado. Ele recebe como argumento o caminho completo do diretório que você deseja criar. Por exemplo:
+
+```python
+import os
+
+# Criando um novo diretório chamado "meu_diretorio" no diretório atual
+os.mkdir("meu_diretorio")
+```
+
+Este código criará um novo diretório chamado "meu_diretorio" no diretório atual do script Python. Se você deseja criar o diretório em um local específico, basta fornecer o caminho completo como argumento para `os.mkdir()`.
+
+**2. `os.rmdir(caminho)`**
+
+O método `os.rmdir(caminho)` é usado para remover um diretório vazio do sistema de arquivos com o caminho especificado. Ele recebe como argumento o caminho completo do diretório que você deseja remover. Por exemplo:
+
+```python
+import os
+
+# Removendo o diretório chamado "meu_diretorio"
+os.rmdir("meu_diretorio")
+```
+
+Este código removerá o diretório "meu_diretorio" do diretório atual do script Python, desde que esteja vazio. Se o diretório contiver arquivos ou outros diretórios, `os.rmdir()` lançará um erro `OSError`. Portanto, é importante garantir que o diretório esteja vazio antes de tentar removê-lo usando esta função.
+
+Lembre-se de que `os.rmdir()` só pode ser usado para remover diretórios vazios. Se você precisar remover um diretório e todo o seu conteúdo, incluindo arquivos e subdiretórios, você pode usar `shutil.rmtree()` do módulo `shutil`.
+
+Com essas duas funções, `os.mkdir()` e `os.rmdir()`, você pode facilmente criar e remover diretórios no sistema de arquivos usando Python.
 
 **Encontrando Seu Arquivo:**
 
