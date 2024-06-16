@@ -24,6 +24,9 @@ Módulos são declarados utilizando snake case, ou seja, com nomes minúsculos e
 
 para rodar abra o terminal e digite 'python3 [nome].py' onde [nome] deve ser trocado pelo nome do arquivo a ser executado
 
+antes de iniciar o python e necessario ativar o venv(python3 -m venv .venv && source .venv/bin/activate)
+
+
 **Dados**
 
 assim como nas outras linguagens o Python tambem tem suas estruturas de dados.

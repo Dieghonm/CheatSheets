@@ -20,3 +20,6 @@ Vamos verificar se deu tudo certo?
 Em um terminal digite python3 -m venv -h.
 
 python3 -m venv -h
+
+antes de iniciar o python e necessario ativar o venv
+python3 -m venv .venv && source .venv/bin/activate

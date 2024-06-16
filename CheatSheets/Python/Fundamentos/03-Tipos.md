@@ -12,6 +12,10 @@ Diferentemente de outras linguagens, como C ou Java, a linguagem Python não lim
 [1_000_000]
 Python permite que você utilize o underline (_) como separador de milhar. Isso ajuda a visualizar números com muitos dígitos. Para encerrarmos este primeiro contato com o tipo int, no emulador seguinte, digite print(type(1_000_000)), clique em Executar e verifique que o valor do exemplo anterior é um inteiro.
 
+para converter valores para o tipo inteiro podemos utilizar o int()
+
+int(3.9) = 3
+
 **O tipo float**
 É o tipo usado para manipular números com parte inteira e parte decimal, chamados de números de ponto flutuante. Fazendo uma analogia com a Matemática, o tipo float é usado para elementos do conjunto dos reais (R).
 
@@ -23,11 +27,20 @@ Ao usar a vírgula como separador em Python, o que ocorre, na verdade, é a cria
 
 Embora os tipos int e float sejam semelhantes, por tratarem de números, eles têm propriedades um pouco diferentes. Em expressões algébricas, sempre que somamos, subtraímos ou multiplicamos apenas elementos do tipo int, o resultado é int. Porém, basta um operando do tipo float para que o resultado seja float.
 
+para converter valores para o tipo float podemos utilizar o float()
+
+float(10) = 10.0
+
 
 **O tipo complex**
 É o tipo utilizado para manipular números complexos, na forma x + yj, sendo x a parte real e y a parte imaginária do complexo.
 
 A chamada r.conjugate() retorna o conjugado do número complexo r, em que a parte real é mantida e a parte imaginária tem o seu sinal trocado.
+
+para converter valores para o tipo complex podemos utilizar o complex()
+
+complex(1) = (1+0j)
+
 
 **O tipo bool**
 Uma expressão algébrica, como vimos nos exemplos dos tipos int e float, é avaliada como um número, seja desses tipos ou de outro tipo numérico admitido em Python. Porém, utilizar expressões não algébricas também é bastante comum. E uma boa notícia é que Python pode avaliar expressões desse tipo também. Essa é uma diferença entre Python e outras linguagens, como C, por exemplo, em que não existe o tipo bool.
@@ -37,6 +50,11 @@ Uma expressão algébrica, como vimos nos exemplos dos tipos int e float, é ava
 
 ```
 res = True
+
+para converter valores para o tipo bool podemos utilizar o bool()
+bool(0) = False
+bool(1) = True
+bool(1234) = True
 
 Agora, vamos ver o operador [not], que é um operador unário, ou seja, só precisa de um operando. Esse operador inverte o valor booleano, ou seja, se o valor original for True, not(valor) terá o valor False. E vice-versa.
 
@@ -50,6 +68,18 @@ Assim como em C ou Java, a indexação dos itens é iniciada com 0 e cada item t
 índice	          0	  1	   2	 3	 4
               	  t	   e	 s	 t	 e
 índice negativo	 -5	 -4	  -3	-2	-1
+
+
+*concatenar string*
+existemduas formas de se concatenar strings
+```python
+nome = 'Diegho' 
+sobrenome = 'Moraes' 
+apresentacao = 'Olá, meu nome é ' + nome + ' ' + sobrenome + '.' print(apresentacao)
+apresentacao = f'Olá, meu nome é {nome} {sobrenome}.' print(apresentacao)
+```
+print(nome[4]) = h
+nome.find('h') = 4
 
 Existem alguns métodos interessantes para tratar strings em Python. Entre eles, ressaltamos:
 
@@ -75,6 +105,16 @@ Quebra a string em substrings.
 ['Ensino', 'a', 'Distância']
 ```
 
+*replace*
+
+nome.replace(antigo, novo) 
+```python
+nome = 'Diegho Moraes' 
+print(nome.replace('Moraes',  'Neves'))
+
+```
+
+
 
 **Listas**
 Listas são sequências mutáveis, normalmente usadas para armazenar coleções de itens homogêneos. Uma lista pode ser criada de algumas maneiras, tais como:
@@ -92,6 +132,21 @@ list() ou list(iterable)
 Usando o construtor do tipo list.
 
 Iterable pode ser uma sequência, um container que suporte iteração ou um objeto iterador. Por exemplo, list('abc') retorna ['a', 'b', 'c'] e list( (1, 2, 3) ) retorna [1, 2, 3]. Se nenhum argumento for passado, o construtor cria uma lista vazia: [ ].
+
+
+```python
+juros = [0.05, 0.07, 0.02, 0.04, 0.08]
+
+juros.insert(0, 0.10)   = [0.10, 0.05, 0.07, 0.02, 0.04, 0.08]
+
+juros.append(0.09)   = [0.10, 0.05, 0.07, 0.02, 0.04, 0.08, 0.09] 
+
+juros.remove(0.1)   = [0.05, 0.07, 0.02, 0.04, 0.08, 0.09] 
+
+terceiro_juros = juros.pop(2)
+print(terceiro_juros)   = 0,02
+print(juros)      = [0.05, 0.07, 0.04, 0.08, 0.09] 
+```
 
 **Tuplas**
 ()
@@ -141,3 +196,30 @@ max(s)	-  Maior item de s
 Os dicionários permitem que itens de uma sequência recebam índices definidos pelo usuário. Um dicionário contém pares de (chave, valor). O formato geral de um objeto dicionário é:
 
 {<chave 1>:<valor 1>, <chave 2>:<valor 2>, ..., <chave i>:<valor i>}
+
+*Atualizando Dicionários*
+Usando Colchetes (obj[chave] = valor)
+Os colchetes são a forma mais direta de adicionar ou atualizar um único par chave-valor em um dicionário.
+Ideal para adicionar ou atualizar um único par chave-valor.
+
+```python
+dicionario = {'nome': 'Alice'}
+dicionario['idade'] = 25
+print(dicionario)  # Output: {'nome': 'Alice', 'idade': 25}
+dicionario['idade'] = 26
+print(dicionario)  # Output: {'nome': 'Alice', 'idade': 26}
+```
+Usando o Método .update()
+O método .update() é útil para adicionar ou atualizar múltiplos pares chave-valor ao mesmo tempo. Ele pode receber um dicionário, uma lista de tuplas, ou argumentos nomeados.
+Mais versátil para adicionar ou atualizar vários pares ao mesmo tempo.
+Útil quando você tem múltiplos pares chave-valor em um dicionário ou lista de tuplas.
+
+```python
+dicionario = {'nome': 'Alice'}
+novos_dados = {'idade': 25, 'cidade': 'São Paulo'}
+dicionario.update(novos_dados)
+print(dicionario)  # Output: {'nome': 'Alice', 'idade': 25, 'cidade': 'São Paulo'}
+dicionario.update(idade=26, estado='São Paulo') 
+print(dicionario)  # Output: {'nome': 'Alice', 'idade': 26, 'cidade': 'São Paulo', 'estado': 'São Paulo'}
+```
+

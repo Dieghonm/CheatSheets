@@ -31,3 +31,6 @@ Abra um arquivo com extensão .py no VSCode e digite o código lista = [1,2,3]. 
 Passando o mouse sobre a linha veremos que o erro é: missing whitespace after ','flake8(E231).
 
 Para corrigir e testar se o nosso formatador está funcionando corretamente, digite ctrl + shift + i. Após salvar novamente o erro deve ter desaparecido. Caso isto não aconteça certifique que tenha feitos os passos anteriormente para instalação do flake8 e black.
+
+antes de iniciar o python e necessario ativar o venv
+python3 -m venv .venv && source .venv/bin/activate
