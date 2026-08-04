@@ -1,4 +1,5 @@
-
+// exemplo no projeto https://github.com/Dieghonm/aprendendoJava, projeto climaAPI
+<!-- https://github.com/Dieghonm/aprendendoJava/tree/main/src/main/java/com/diegho/aprendendoJava/projetos/climaAPI -->
 
 uma vez instalado o jackson como no item 07, vamos continuar o exemplo...
 

@@ -1,3 +1,6 @@
+// exemplo no projeto https://github.com/Dieghonm/aprendendoJava, projeto climaAPI
+<!-- https://github.com/Dieghonm/aprendendoJava/tree/main/src/main/java/com/diegho/aprendendoJava/projetos/climaAPI -->
+
 # Java — Interfaces
 
 ## 1. O que é uma interface?
@@ -11,7 +14,6 @@ public interface Pagavel {
 ```
 
 Isso significa: "toda classe que implementar `Pagavel` precisa saber calcular um pagamento". Como cada classe faz esse cálculo é problema dela.
-
 
 
 ## 2. Implementando uma interface

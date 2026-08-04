@@ -1,3 +1,6 @@
+// exemplo no projeto https://github.com/Dieghonm/aprendendoJava, projeto climaAPI
+<!-- https://github.com/Dieghonm/aprendendoJava/tree/main/src/main/java/com/diegho/aprendendoJava/projetos/climaAPI -->
+
 # Java — Consumindo APIs com HttpClient
 
 Desde o Java 11, existe um cliente HTTP nativo na linguagem (`java.net.http`), então não precisamos de bibliotecas externas (tipo RestTemplate do Spring ou Axios do JS) pra fazer uma requisição simples.

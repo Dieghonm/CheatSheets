@@ -1,3 +1,6 @@
+// exemplo no projeto https://github.com/Dieghonm/aprendendoJava, projeto climaAPI
+<!-- https://github.com/Dieghonm/aprendendoJava/tree/main/src/main/java/com/diegho/aprendendoJava/projetos/climaAPI -->
+
 # Java — Record
 
 ## 1. O que é um `record`?
