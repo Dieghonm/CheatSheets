@@ -13,6 +13,7 @@ public interface Pagavel {
 Isso significa: "toda classe que implementar `Pagavel` precisa saber calcular um pagamento". Como cada classe faz esse cálculo é problema dela.
 
 
+
 ## 2. Implementando uma interface
 
 ```java
